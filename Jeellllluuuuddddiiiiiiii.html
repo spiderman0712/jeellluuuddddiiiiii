@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Chikudi 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&family=Great+Vibes&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Nunito', sans-serif;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* Page Management */
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        /* Navigation Buttons */
+        .nav-container {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .btn-nav {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-family: 'Fredoka One', cursive;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-back {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-next {
+            background: linear-gradient(45deg, #ff65a3, #ff85a1);
+            color: white;
+        }
+
+        .btn-nav:hover {
+            transform: scale(1.08);
+        }
+
+        /* --- PAGE 1: Cinematic Lake Background --- */
+        #page1 {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+                url('lotus_swan.jpg');
+            background-size: cover;
+            background-position: center;
+            animation: backgroundCinema 30s infinite alternate ease-in-out;
+        }
+
+        /* Simulated 4k cinematic movement */
+        @keyframes backgroundCinema {
+            0% {
+                transform: scale(1.02) translate(0px, 0px);
+            }
+
+            100% {
+                transform: scale(1.1) translate(-10px, -10px);
+            }
+        }
+
+        /* Procedural Lake Element Overlay to mimic your exact vision */
+        .lake-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45%;
+            background: linear-gradient(180deg, rgba(64, 165, 120, 0.4) 0%, rgba(23, 86, 115, 0.6) 100%);
+            backdrop-filter: blur(1px);
+            clip-path: ellipse(80% 100% at 50% 100%);
+        }
+
+        /* Floating Swans & Lotuses */
+        .swan-container {
+            position: absolute;
+            bottom: 15%;
+            width: 100%;
+            height: 100px;
+            pointer-events: none;
+        }
+
+        .swan {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: swim 25s infinite linear;
+            opacity: 0.9;
+        }
+
+        .swan1 {
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .swan2 {
+            left: -25%;
+            animation-delay: 5s;
+            transform: scale(0.8);
+        }
+
+        .swan3 {
+            right: -10%;
+            animation-delay: 2s;
+            transform: scaleX(-1);
+            animation: swimLeft 22s infinite linear;
+        }
+
+        @keyframes swim {
+            0% {
+                left: -10%;
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(5px);
+            }
+
+            100% {
+                left: 110%;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes swimLeft {
+            0% {
+                right: -10%;
+                transform: scaleX(-1) translateY(0px);
+            }
+
+            50% {
+                transform: scaleX(-1) translateY(-5px);
+            }
+
+            100% {
+                right: 110%;
+                transform: scaleX(-1) translateY(0px);
+            }
+        }
+
+        .lotus-flower {
+            position: absolute;
+            font-size: 1.8rem;
+            bottom: 10%;
+            animation: floatFlower 4s infinite ease-in-out;
+        }
+
+        @keyframes floatFlower {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-4px) rotate(3deg);
+            }
+        }
+
+        /* Page 1 Typography & Interactive Buttons */
+        .main-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 0 8px 20px rgba(255, 20, 147, 0.7), 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+            z-index: 5;
+            animation: pulseText 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseText {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .button-box {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        .btn-choice {
+            padding: 18px 32px;
+            font-size: 1.3rem;
+            font-family: 'Fredoka One', cursive;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #ff4081, #ff80ab);
+            color: white;
+            border: 3px solid #fff;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 64, 129, 0.5);
+        }
+
+        .btn-no {
+            background: #e0e0e0;
+            color: #616161;
+        }
+
+        .btn-no.stubborn {
+            background: #424242;
+            color: #ff5252;
+            cursor: not-allowed;
+            transform: scale(0.95);
+            box-shadow: none;
+        }
+
+        /* --- PAGE 2: Starry, Beating Hearts Sky --- */
+        #page2 {
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        }
+
+        /* Twinkling Stars Container */
+        .stars-container,
+        .hearts-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.2;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Beating Hearts Background */
+        .beating-heart {
+            position: absolute;
+            color: rgba(255, 75, 110, 0.25);
+            font-size: 2rem;
+            animation: backgroundHeartBeat 1.5s infinite ease-in-out;
+        }
+
+        @keyframes backgroundHeartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: scale(1.25);
+                opacity: 0.4;
+            }
+        }
+
+        /* Big Gift Ribbon Button */
+        .ribbon-btn {
+            font-size: 6rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 5;
+            transition: transform 0.3s ease;
+            animation: bounceRibbon 2s infinite;
+        }
+
+        .ribbon-btn:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        @keyframes bounceRibbon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Particle Sparkles Canvas */
+        #sparkleCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 6;
+        }
+
+        /* Kiss Screen Overlay */
+        .kiss-overlay {
+            position: absolute;
+            font-size: 1rem;
+            opacity: 0;
+            z-index: 8;
+            pointer-events: none;
+            display: none;
+        }
+
+        .kiss-active {
+            display: block;
+            animation: giantKiss 1.8s forwards ease-in;
+        }
+
+        @keyframes giantKiss {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            80% {
+                transform: scale(45);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: scale(55);
+                opacity: 0;
+            }
+        }
+
+        /* Emotional Text Screen */
+        .emotional-phrase {
+            display: none;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            max-width: 800px;
+            line-height: 1.4;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+            z-index: 7;
+            animation: fadeInText 2s ease-out;
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- PAGE 3: Clothesline Photo Gallery --- */
+        #page3 {
+            background: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+        }
+
+        .rope-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-top: -50px;
+            overflow: hidden;
+        }
+
+        .rope {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 200%;
+            /* Double width to support seamless loop sliding */
+            height: 4px;
+            background: #8e7355;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: flex-start;
+            padding-left: 50px;
+            animation: slideRope 80s linear infinite;
+            /* Slowed down from 50s to 80s for comfortable viewing */
+        }
+
+        .rope:hover {
+            animation-play-state: paused;
+            /* Allows your gf to pause and look closely at a photo */
+        }
+
+        @keyframes slideRope {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .photo-card {
+            position: relative;
+            margin-right: 120px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            transform-origin: top center;
+            animation: breeze 3s infinite ease-in-out alternate;
+        }
+
+        /* Alternate swing offsets for realism */
+        .photo-card:nth-child(even) {
+            animation-delay: -1.5s;
+        }
+
+        @keyframes breeze {
+            0% {
+                transform: rotate(-4deg);
+            }
+
+            100% {
+                transform: rotate(4deg);
+            }
+        }
+
+        .cloth-clip {
+            font-size: 2rem;
+            position: absolute;
+            top: -24px;
+            z-index: 3;
+        }
+
+        .photo-frame {
+            width: 160px;
+            height: 200px;
+            background: #fff;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 2px;
+            border: 1px solid #ddd;
+        }
+
+        .photo-frame img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .gallery-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: #d81b60;
+            margin-bottom: 60px;
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- PAGE 4: Love Letter Space --- */
+        #page4 {
+            background: radial-gradient(circle, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+        }
+
+        .letter-container {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            max-width: 650px;
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            border: 4px dashed #ff4b72;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .letter-container::before {
+            content: "💝";
+            position: absolute;
+            top: -25px;
+            left: 47%;
+            font-size: 2.5rem;
+        }
+
+        .letter-text {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.15rem;
+            /* Marginally adjusted from 1.25rem for readability spacing */
+            line-height: 1.7;
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .letter-signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.3rem;
+            /* Marginally adjusted from 2.5rem for scale continuity */
+            text-align: right;
+            margin-top: 25px;
+            color: #ff4b72;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="page1" class="page active">
+
+
+
+        <h1 class="main-title">Surprise Mari Chikudiiiii 💗💖</h1>
+
+        <div class="button-box">
+            <button class="btn-choice btn-yes" onclick="navigateTo(2)">Yeahhhhhh let's open the surprise🤩</button>
+            <button id="stubbornBtn" class="btn-choice btn-no" onclick="handleStubbornButton()">I don't want
+                surprise</button>
+        </div>
+    </div>
+
+    <div id="page2" class="page">
+        <div class="stars-container" id="starsContainer"></div>
+        <div class="hearts-container" id="heartsContainer"></div>
+        <canvas id="sparkleCanvas"></canvas>
+
+        <div class="kiss-overlay" id="kissOverlay">💋</div>
+
+        <button id="ribbonBtn" class="ribbon-btn" onclick="triggerRibbonSurprise()">🎀</button>
+
+        <div id="emotionalMessage" class="emotional-phrase">
+            "Every single second away from you feels like an eternity, Jeel. My heart aches just to look into your
+            beautiful eyes and hold your hands. I miss you to the absolute cosmos and back... 🥺❤️"
+        </div>
+
+        <div class="nav-container" style="display: none;" id="page2Nav">
+            <button class="btn-nav btn-back" onclick="navigateTo(1)">Back</button>
+            <button class="btn-nav btn-next" onclick="navigateTo(3)">Next ➜</button>
+        </div>
+    </div>
+
+
+    <div id="page3" class="page">
+        <h2 class="gallery-title">Our Little Memory Line ✨</h2>
+
+        <audio id="backgroundMusic" loop src="C:\Users\Shalin parikh\Downloads\bairan.mp3"
+            style="display:none;"></audio>
+
+        <div class="rope-container">
+            <div class="rope" id="memoryRope">
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us1.jpeg" alt="Us 1">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us2.jpeg" alt="Us 2">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us3.jpeg" alt="Us 3">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us4.jpeg" alt="Us 4">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\jeel.2.jpeg" alt="Us 5">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us6.jpeg" alt="Us 6">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us7.jpeg" alt="Us 7">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\jeel.4.jpeg" alt="jeel 4">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us9.jpeg" alt="Us 9">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us10.jpeg" alt="Us 10">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us11.jpeg" alt="Us 11">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\jeel.3.jpeg" alt="jeel 3">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us13.jpeg" alt="Us 13">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us14.jpeg" alt="Us 14">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us15.jpeg" alt="Us 15">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us16.jpeg" alt="Us 16">
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us1.jpeg" alt="Us 1">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us2.jpeg" alt="Us 2">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us3.jpeg" alt="Us 3">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us4.jpeg" alt="Us 4">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\jeel.2.jpeg" alt="Us 5">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us6.jpeg" alt="Us 6">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us7.jpeg" alt="Us 7">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\jeel.4.jpeg" alt="jeel.4">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us9.jpeg" alt="Us 9">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us10.jpeg" alt="Us 10">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us11.jpeg" alt="Us 11">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\jeel.3.jpeg" alt="jeel 3">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us13.jpeg" alt="Us 13">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us14.jpeg" alt="Us 14">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us15.jpeg" alt="Us 15">
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="cloth-clip">📌</div>
+                    <div class="photo-frame">
+                        <img src="C:\Users\Shalin parikh\Downloads\us16.jpeg" alt="Us 16">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top:20px; font-style:italic; color:#7d1238;">(Tip: Hover your mouse over the rope to freeze and
+            hold a memory!)</p>
+
+        <div class="nav-container">
+            <button class="btn-nav btn-back" onclick="navigateTo(2)">Back</button>
+            <button class="btn-nav btn-next" onclick="navigateTo(4)">Next ➜</button>
+        </div>
+    </div>
+
+
+    <div id="page4" class="page">
+        <div class="letter-container">
+            <div class="letter-text">
+                Dearest Jeel,
+
+                From the moment you stepped into my life, you changed my world completely. No amount of distance can
+                ever change how deep my love is for you. Every beat of my heart speaks your name, and every single day,
+                I find myself falling for you all over again.
+
+                You are my comfort, my happy place, and my greatest blessing. Life is so much sweeter, brighter, and
+                beautiful with you by my side. I promise to love you, cherish you, and hold you close through
+                everything.
+
+                I love you more than words could ever explain, my wonderful Chikudi. Always and forever. ❤️
+            </div>
+            <div class="letter-signature">Yours Always, Shalin</div>
+        </div>
+
+        <div class="nav-container">
+            <button class="btn-nav btn-back" onclick="navigateTo(3)">Back</button>
+        </div>
+    </div>
+
+    <script>
+        // Setup Page Navigation Engine
+        function navigateTo(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('page' + pageNumber).classList.add('active');
+
+            // Handle audio tracking seamlessly across pages
+            const music = document.getElementById('backgroundMusic');
+            if (pageNumber === 3) {
+                music.play().catch(e => console.log("Audio waiting for interaction to trigger: " + e));
+            } else {
+                music.pause();
+            }
+
+            if (pageNumber === 2) {
+                initStarsAndHearts();
+            }
+            if (pageNumber === 3) {
+                adjustRopeWidth();
+            }
+        }
+
+        // JavaScript adjustment to dynamically scale the layout container for extra items
+        function adjustRopeWidth() {
+            const rope = document.getElementById('memoryRope');
+            const cards = rope.querySelectorAll('.photo-card');
+            if (cards.length > 0) {
+                // Card calculation: 160px width + 120px margin-right = 280px total per step
+                const singleCardStep = 280;
+                const totalCalculatedWidth = cards.length * singleCardStep;
+                rope.style.width = totalCalculatedWidth + 'px';
+            }
+        }
+
+        // Page 1: Stubborn "No" Button Logic
+        function handleStubbornButton() {
+            const btn = document.getElementById('stubbornBtn');
+            btn.innerText = "you got no option darling😼";
+            btn.classList.add('stubborn');
+            btn.disabled = true;
+        }
+
+        // Page 2: Procedural Generative Stars and Beating Hearts
+        let dynamicElementsGenerated = false;
+        function initStarsAndHearts() {
+            if (dynamicElementsGenerated) return;
+
+            const starsContainer = document.getElementById('starsContainer');
+            const heartsContainer = document.getElementById('heartsContainer');
+
+            // Generate 100 random twinkling stars
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.width = star.style.height = Math.random() * 3 + 'px';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                starsContainer.appendChild(star);
+            }
+
+            // Generate 25 Beating Background Hearts
+            for (let i = 0; i < 25; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('beating-heart');
+                heart.innerHTML = '❤️';
+                heart.style.top = Math.random() * 90 + '%';
+                heart.style.left = Math.random() * 90 + '%';
+                heart.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+                heart.style.animationDelay = Math.random() * 1.5 + 's';
+                heartsContainer.appendChild(heart);
+            }
+
+            dynamicElementsGenerated = true;
+        }
+
+        // Page 2: Ribbon Sparkle Particles Canvas Engine
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationFrameId;
+        let runningSparkles = false;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 6 + 2;
+                this.speedX = Math.random() * 8 - 4;
+                this.speedY = Math.random() * -8 - 2;
+                this.color = `hsl(${Math.random() * 60 + 330}, 100%, 75%)`; // Pink/Gold spectrum
+                this.alpha = 1;
+                this.decay = Math.random() * 0.02 + 0.015;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.speedY += 0.1; // Add subtle gravity
+                this.alpha -= this.decay;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Particle configuration engine loop execution
+        function animateSparkles() {
+            if (!runningSparkles && particles.length === 0) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                cancelAnimationFrame(animationFrameId);
+                return;
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (runningSparkles) {
+                for (let i = 0; i < 5; i++) {
+                    particles.push(new Particle(canvas.width / 2, canvas.height / 2));
+                }
+            }
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].alpha <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+            animationFrameId = requestAnimationFrame(animateSparkles);
+        }
+
+        function triggerRibbonSurprise() {
+            const ribbonBtn = document.getElementById('ribbonBtn');
+            const kissOverlay = document.getElementById('kissOverlay');
+            const emotionalMessage = document.getElementById('emotionalMessage');
+            const navBar = document.getElementById('page2Nav');
+
+            ribbonBtn.style.display = 'none';
+            runningSparkles = true;
+            animateSparkles();
+
+            setTimeout(() => {
+                runningSparkles = false;
+
+                kissOverlay.classList.add('kiss-active');
+
+                setTimeout(() => {
+                    kissOverlay.classList.remove('kiss-active');
+                    emotionalMessage.style.display = 'block';
+                    navBar.style.display = 'flex';
+                }, 1800);
+
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
